@@ -4,9 +4,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     - name: Publish to Registry
-      uses: okansungur/gitactions@master
+      uses: okansungur/gitactions@main
       with:
         name: greenredblue/studentsaction
         username: ${{ secrets.DOCKER_USERNAME }}
