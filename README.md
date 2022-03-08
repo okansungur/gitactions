@@ -4,6 +4,7 @@
 
 ### Gitactions for project https://github.com/okansungur/tests/tree/main/junit/students_template
 
-
-
+- Run tests
+- Build Image
+- Push to Docker Hub
 
