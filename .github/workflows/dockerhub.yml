@@ -11,8 +11,8 @@ jobs:
     steps:
      - uses: actions/checkout@v2
      - name: login docker
-       env:
-         TAG_NAME: $(date +%s)
+      # env:
+        # TAG_NAME: $(date +%s)
        run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
        
@@ -20,13 +20,8 @@ jobs:
        id: date
        run: echo "::set-output name=date::$(date +'%Y-%m-%d--%M-%S')"
      - name: Build the Docker image
-       env:
-         DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
-         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-         TAG_NAME: $(date +%s)
-     
        run: docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
      - name: result of build
-       run: echo "OK!"
+       run: echo "OK! " + $(date +%s)
      - name: Docker Push to Hub
        run: docker push $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
