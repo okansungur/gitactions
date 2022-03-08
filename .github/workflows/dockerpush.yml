@@ -6,8 +6,9 @@ runs-on: ubuntu-latest
 steps:
 - uses: actions/checkout@main
 - name: Publish to Registry
-uses: okansungur/Publish-Docker-Github-Action@master
+uses: okansungur/gitactions@main
 with:
-name: mystudentactionsrepo
+name: greenredblue/studentsaction
 username: ${{ secrets.DOCKER_USERNAME }}
 password: ${{ secrets.DOCKER_PASSWORD }}
+
