@@ -1,14 +1,14 @@
 name: Build and Push to DockerHub
 on: [push]
 jobs:
-build:
-runs-on: ubuntu-latest
-steps:
-- uses: actions/checkout@main
-- name: Publish to Registry
-uses: okansungur/gitactions@main
-with:
-name: greenredblue/studentsaction
-username: ${{ secrets.DOCKER_USERNAME }}
-password: ${{ secrets.DOCKER_PASSWORD }}
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+    - name: Publish to Registry
+      uses: okansungur/gitactions@main
+      with:
+        name: greenredblue/studentsaction
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
