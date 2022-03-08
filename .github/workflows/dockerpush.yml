@@ -12,9 +12,9 @@ jobs:
        run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
      - name: Build the Docker image
-       run: docker build . --file Dockerfile --tag greenredblue/studentsaction:$(date +%s)
-     - name: Docker Push to Hub-
-       run: docker push greenredblue/studentsaction
+       run: docker build . --file Dockerfile --tag greenredblue/studentsaction:latest
+     - name: Docker Push to Hub
+       run: docker push ${{secrets.DOCKER_USERNAME}}/studentsaction:latest
 
     
     
